@@ -1,0 +1,58 @@
+
+  /* .card { */
+      /* width: 130px;
+      height: 195px; */
+    /* position: relative;
+ } */
+
+    /* .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        } */
+
+  /* .card .img_top {
+    position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+        transition: .5s ease;
+        background-color: #008CBA;
+  } */
+
+   /* .img_stop .card.hover {
+    opacity: 1;
+    background-color: yellow;
+  } */
+
+  .slick-slide div{
+    margin-right: 5px;
+  }
+  .slick-next{
+  
+  width:30px !important;
+  height: 30px !important;
+  }
+
+  .slick-prev{
+      width: 30px !important;
+      height: 30px !important;
+      left: -35px;
+  }
+
+    .slick-next::before{
+      color: blueviolet;
+      font-size: 40px !important;
+    }
+
+    .slick-prev::before{
+      color: blueviolet;
+      font-size: 40px !important;
+      z-index: 100;
+    }
+
+    
