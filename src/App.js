@@ -12,6 +12,7 @@ import Bannerslider, {
 import "./App.css";
 import Footer from "./powerxproject/Footer";
 import ImageSlider from "./powerxproject/ImageSlider";
+import Faq from "./powerxproject/Faq";
 
 function App() {
   // const App = () => {
@@ -19,7 +20,7 @@ function App() {
   return (
     <div classname="">
       <div className="">
-        <Header />
+        {/* <Header /> */}
         <div>
           <ImageSlider />
         </div>
@@ -31,7 +32,10 @@ function App() {
         <div className="">{CPUcooling()}</div>
         <div>{CardRead()}</div>
         <div>{Ram()}</div>
-        <Footer />
+        <div>
+          <Faq />
+        </div>
+        {/* <Footer /> */}
       </div>
     </div>
   );

@@ -31,10 +31,10 @@ function Header(props) {
         <div className="lg:md:block hidden">
           <ul className={classes.Header_Subcat}>
             <li className="Menu">
-              <Link to="/footer">{header.about}</Link>
+              <Link to="/about-us">{header.about}</Link>
             </li>
             <li className="Menu">
-              <Link to="">{header.branches}</Link>
+              <Link to="/branch">{header.branches}</Link>
             </li>
             <li className={classes.Menu}>
               {header.products}
@@ -43,10 +43,10 @@ function Header(props) {
               </div>
             </li>
             <li className="Menu">
-              <Link to="">{header.rma_poloicy}</Link>
+              <Link to="/rma-policy">{header.rma_poloicy}</Link>
             </li>
             <li className="Menu">
-              <Link to="">{header.contact_us}</Link>
+              <Link to="/contact-us">{header.contact_us}</Link>
             </li>
           </ul>
         </div>

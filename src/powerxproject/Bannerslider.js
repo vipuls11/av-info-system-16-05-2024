@@ -50,19 +50,44 @@ function Bannerslider() {
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 2000,
-    cssEase: "linear",
-    beforeChange: (current, next) => {
-      const slides = document.querySelectorAll(".slick-slide");
-      slides.forEach((slide) => {
-        slide.style.marginLeft = "0";
-      });
-      const nextSlide = document.querySelector(
-        `.slick-slide[data-slick-index="${next}"]`
-      );
-      if (nextSlide) {
-        nextSlide.style.marginLeft = "10px";
-      }
-    },
+    responsive: [
+      {
+        breakpoint: 1281,
+        settings: {
+          slidesToShow: 6,
+        },
+      },
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 430,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   const banner = {
     title: "Bestseller Alert",
@@ -452,7 +477,7 @@ const CPUcooling = () => {
           Learn more
         </button>
 
-        <table className="w-full my-10">
+        <table className="w-full my-10 overflow-x-auto">
           <tbody>
             <tr className="">
               <td className="w-96"></td>
@@ -696,7 +721,7 @@ const Ram = () => {
   return (
     <>
       <div className="w-[95%] m-auto my-5">
-        <div className="flex gap-5">
+        <div className="lg:flex gap-5">
           <div class=" py-5">
             <div className="mb-5">
               <h3 className="text-3xl font-semibold mb-8">RAM's</h3>
