@@ -1,0 +1,15 @@
+.Branch {
+  width: 95%;
+  margin: auto;
+}
+
+.Branchsofcompany {
+  width: 55%;
+  margin: 20px 0px;
+}
+
+.Branchsofcompany h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,21 @@
+.floating-label-wrapper label {
+  background-color: transparent;
+  color: #333;
+  border: none;
+}
+.floating-label-wrapper input {
+  padding: 10px;
+}
+
+.floating-label-wrapper input:focus {
+  outline: none;
+  border-color: black;
+
+  /* box-shadow: 0 0 5px black; */
+  color: black;
+  border: none;
+}
+
+div.floating-label-wrapper label:focus {
+  color: black;
+}

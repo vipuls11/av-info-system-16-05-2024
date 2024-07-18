@@ -1,0 +1,25 @@
+
+
+.Productlist{
+    /* border: 1px solid black; */
+    padding: 10px;
+    line-height: 30px;
+    background: linear-gradient(90deg, rgba(240, 237, 240, 1) 0%, rgba(0, 209, 255, 1) 100%);
+    width: 250px;
+    height: 300px;
+    overflow: hidden;
+    overflow-y: scroll;
+    text-align: center;
+   
+}
+
+.Productlist li{
+    border: 1px solid black;
+    margin: 5px;
+    background-color: rgba(240, 237, 240, 1);
+}
+
+.Productlist li:hover{
+    background-color: rgb(212, 209, 212);
+   
+}

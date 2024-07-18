@@ -1,0 +1,51 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    
+    /* background: linear-gradient(54 deg, rgb(255, 255, 255) 3.232%, rgb(255, 255, 255) 10%, rgb(223, 255, 253) 50%, rgb(255, 255, 255) 100%);       */
+}
+
+.Main_Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   padding: 10px 30px;
+   font-size: 20px;
+background: linear-gradient(90deg, rgba(240, 237, 240, 1) 0%, rgba(0, 209, 255, 1) 100%);
+}
+
+.Header_Subcat{
+display: flex;
+gap: 20px;
+align-items: center;
+
+}
+
+.User_Header{
+    display: flex;
+        gap: 20px;
+        align-items: center;
+}
+
+.Log{
+    width: 50px;
+}
+
+.Menu{
+    position: relative;
+    padding: 6px;
+}
+.Menu:hover{
+    background-color: beige;
+}
+.Submenu{
+    position: absolute;
+    top:40px;
+    display: none;
+}
+
+.Menu:hover .Submenu{
+    display: block;
+    z-index: 100;
+}

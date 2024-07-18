@@ -1,0 +1,41 @@
+.branchs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  font-weight: 500;
+}
+
+.branchlist {
+  margin: 20px 0;
+}
+
+.branchs :first-child {
+  grid-column: 1 / span 2;
+}
+
+.first-address {
+  width: 55%;
+}
+.branchlist_address {
+  margin-bottom: 30px;
+}
+.branchlist_phone_no {
+  margin-bottom: 20px;
+}
+.branchlist_button {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+  border-radius: 8px;
+}
+
+.branchlist_name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.branchlist_head {
+  margin: 15px 0;
+}

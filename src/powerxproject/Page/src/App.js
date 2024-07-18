@@ -12,8 +12,6 @@ import Bannerslider, {
 import "./App.css";
 import Footer from "./powerxproject/Footer";
 import ImageSlider from "./powerxproject/ImageSlider";
-import Faq from "./powerxproject/Faq";
-import GroupBussiness from "./powerxproject/GroupBussiness";
 
 function App() {
   // const App = () => {
@@ -21,7 +19,7 @@ function App() {
   return (
     <div classname="">
       <div className="">
-        {/* <Header /> */}
+        <Header />
         <div>
           <ImageSlider />
         </div>
@@ -33,11 +31,7 @@ function App() {
         <div className="">{CPUcooling()}</div>
         <div>{CardRead()}</div>
         <div>{Ram()}</div>
-        <div>
-          <Faq />
-        </div>
-        <GroupBussiness />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );
