@@ -1,22 +1,9 @@
 import React from "react";
 import classes from "./Submenu.module.css";
+import { Link } from "react-router-dom";
 
 function Submenu(props) {
   const produtlist = [
-    //         Motherboards
-    // SSD's
-    // ATX Cabinets
-    // LED Monitors
-    // Keyboard and Mouse
-    // SMD SMPS
-    // Toner Cartridges
-    // Graphic Card
-    // CPU Cooler Fans
-    // External Casing and WiFi
-    // Speakers
-    // Screen Cleaning Kit
-    // RAM's
-    // Laptop Accessories
     {
       list: "Motherboards",
       link: "",
@@ -74,29 +61,28 @@ function Submenu(props) {
       links: "",
     },
   ];
+
   return (
     <>
-      <ul className={classes.Productlist}>
-        <li>Motherboards</li>
+      <ul className={`${classes.Productlist} lg:md:block hidden`}>
+        {produtlist.map((item) => {
+          return (
+            <li>
+              <Link to="">{item.list}</Link>
+            </li>
+          );
+        })}
+      </ul>
 
-        <li>SSD's</li>
-
-        <li>ATX Cabinets</li>
-
-        <li>LED Monitors</li>
-
-        <li>Motherboards</li>
-
-        <li>Motherboards</li>
-
-        <li>Motherboards</li>
-        <li>Motherboards</li>
-        <li>Motherboards</li>
-        <li>Motherboards</li>
-        <li>Motherboards</li>
-
-        <li>Motherboards</li>
-        <li>Motherboards</li>
+      {/* .....Formobile... */}
+      <ul className={`lg:md:hidden block py-2`}>
+        {produtlist.map((item) => {
+          return (
+            <li className="border-b bottom-1 border-black">
+              <Link to="">{item.list}</Link>
+            </li>
+          );
+        })}
       </ul>
     </>
   );

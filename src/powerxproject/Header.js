@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import classes from "./Header.module.css";
 import Submenu from "./Submenu";
+import SideDrawer from "../SideDrawer/SideDrawer";
+import BackDrop from "../SideDrawer/BackDrop";
 
 function Header(props) {
+  const [open, setOpen] = useState(false);
+  //  const myRef = useRef(null);
+
+  const OpenDrawerHandler = () => {
+    setOpen(true);
+  };
+  const closeDrawerHandler = () => {
+    setOpen(false);
+  };
   const header = {
     img_log: "./image/logoavs.png",
     about: "About",
@@ -11,13 +22,37 @@ function Header(props) {
     products: "Products",
     rma_poloicy: "RMA Policy",
     contact_us: "Contact Us",
-    // search: <FontAwesomeIcon icon="fa-solid fa-user" />,
-    // user: <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />,
-    // cart: <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />,
   };
 
   return (
     <>
+      {open && <BackDrop onClick={closeDrawerHandler} />}
+
+      <SideDrawer show={open} onClick={closeDrawerHandler}>
+        <div className="lg:md:hidden block text-black">
+          <ul className="text-left p-5">
+            <li className={classes.Menu_mobile}>
+              <Link to="/about-us">{header.about}</Link>
+            </li>
+            <li className={classes.Menu_mobile}>
+              <Link to="/branch">{header.branches}</Link>
+            </li>
+            <li className={classes.Menu_mobile}>
+              <Link to="/product">{header.products}</Link>
+              <div className="">
+                <Submenu />
+              </div>
+            </li>
+
+            <li className={classes.Menu_mobile}>
+              <Link to="/rma-policy">{header.rma_poloicy}</Link>
+            </li>
+            <li className={classes.Menu_mobile}>
+              <Link to="/contact-us">{header.contact_us}</Link>
+            </li>
+          </ul>
+        </div>
+      </SideDrawer>
       <nav className={classes.Main_Header}>
         <div className="Log">
           <Link to="/">
@@ -37,7 +72,7 @@ function Header(props) {
               <Link to="/branch">{header.branches}</Link>
             </li>
             <li className={classes.Menu}>
-              {header.products}
+              <Link to="/product">{header.products}</Link>
               <div className={classes.Submenu}>
                 <Submenu />
               </div>
@@ -63,7 +98,7 @@ function Header(props) {
             {/* {header.cart} */}
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
-          <button className="block lg:md:hidden">
+          <button className="block lg:md:hidden" onClick={OpenDrawerHandler}>
             <i class="fa-solid fa-bars"></i>
           </button>
         </div>

@@ -11,6 +11,7 @@ import Footer from "./powerxproject/Footer";
 import Branch from "./powerxproject/Branch";
 import RmaPolicy from "./powerxproject/RmaPolicy";
 import ContactUs from "./powerxproject/ContactUs";
+import Product from "./powerxproject/Product";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +22,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/branch" element={<Branch />} />
+        <Route path="/product" element={<Product />} />
         <Route path="/rma-policy" element={<RmaPolicy />} />
         <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
