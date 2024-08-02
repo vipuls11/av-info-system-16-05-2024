@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Submenu.module.css";
 import { Link } from "react-router-dom";
-
+import Productlist from "../datalist/Productlist";
 function Submenu(props) {
   const produtlist = [
     {
@@ -62,12 +62,28 @@ function Submenu(props) {
     },
   ];
 
+  const [items, setItems] = useState(Productlist);
+  console.log(items, "fhdjh");
+  const filterItem = (cateItem) => {
+    const updatedItems = Productlist.filter((curElem) => {
+      return curElem.name === cateItem;
+    });
+    setItems(updatedItems);
+  };
+
   return (
     <>
       <ul className={`${classes.Productlist} lg:md:block hidden`}>
         {produtlist.map((item) => {
           return (
-            <li>
+            <li
+              onClick={() => {
+                filterItem(
+                  item.list,
+                  console.log(item.list, "iuiyhdfgydbnbnvfdjnjn")
+                );
+              }}
+            >
               <Link to="">{item.list}</Link>
             </li>
           );

@@ -15,21 +15,21 @@ import Product from "./powerxproject/Product";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/branch" element={<Branch />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/rma-policy" element={<RmaPolicy />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-      </Routes>
+  // <React.StrictMode>
+  <BrowserRouter>
+    <Header />
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/branch" element={<Branch />} />
+      <Route path="/product" element={<Product />} />
+      <Route path="/rma-policy" element={<RmaPolicy />} />
+      <Route path="/contact-us" element={<ContactUs />} />
+    </Routes>
 
-      <Footer />
-    </BrowserRouter>
-  </React.StrictMode>
+    <Footer />
+  </BrowserRouter>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
