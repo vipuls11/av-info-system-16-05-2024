@@ -12,13 +12,14 @@ function Header(props) {
   const OpenDrawerHandler = () => {
     setOpen(true);
   };
+
   const closeDrawerHandler = () => {
     setOpen(false);
   };
   const header = {
     img_log: "./image/logoavs.png",
     about: "About",
-    branches: "branches",
+    branches: "Branches",
     products: "Products",
     rma_poloicy: "RMA Policy",
     contact_us: "Contact Us",

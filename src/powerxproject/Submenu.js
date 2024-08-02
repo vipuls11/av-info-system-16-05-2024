@@ -6,59 +6,59 @@ function Submenu(props) {
   const produtlist = [
     {
       list: "Motherboards",
-      link: "",
+      links: "/motherboards",
     },
     {
       list: "SSD's",
-      links: "",
+      links: "/ssd",
     },
     {
       list: "ATX Cabinets",
-      links: "",
+      links: "/atx-cabinets",
     },
     {
       list: "LED Monitors",
-      links: "",
+      links: "/led-monitors",
     },
     {
       list: "Keyboard and Mouse",
-      links: "",
+      links: "/keyboard-mouse",
     },
     {
       list: "SMD SMPS",
-      links: "",
+      links: "/smd-spms",
     },
     {
       list: "Toner Cartridges",
-      links: "",
+      links: "/toner-catridges",
     },
     {
       list: "Graphic Card",
-      links: "",
+      links: "/graphic-card",
     },
     {
       list: "CPU Cooler Fans",
-      links: "",
+      links: "/cpu-cooler-fans",
     },
     {
       list: "External Casing and WiFi",
-      links: "",
+      links: "/external-casing-wifi",
     },
     {
       list: "Speakers",
-      links: "",
+      links: "/speaker",
     },
     {
       list: "Screen Cleaning Kit",
-      links: "",
+      links: "/screen-cleaning-kit",
     },
     {
       list: "RAM's",
-      links: "",
+      links: "/ram",
     },
     {
       list: "Laptop Accessories",
-      links: "",
+      links: "/latop-accessories",
     },
   ];
 
@@ -79,12 +79,12 @@ function Submenu(props) {
             <li
               onClick={() => {
                 filterItem(
-                  item.list,
-                  console.log(item.list, "iuiyhdfgydbnbnvfdjnjn")
+                  item.list
+                  // console.log(item.list, "iuiyhdfgydbnbnvfdjnjn")
                 );
               }}
             >
-              <Link to="">{item.list}</Link>
+              <Link to={item.links}>{item.list}</Link>
             </li>
           );
         })}
