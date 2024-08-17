@@ -17,6 +17,14 @@
     rgba(240, 237, 240, 1) 0%,
     rgba(0, 209, 255, 1) 100%
   );
+  /* box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+  margin-bottom: 100px;
 }
 
 .Header_Subcat {
@@ -55,4 +63,15 @@
 .Menu:hover .Submenu {
   display: block;
   z-index: 100;
+}
+
+.headerItem {
+  margin: 0 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  font-weight: bold;
+  color: blue;
 }

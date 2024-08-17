@@ -20,6 +20,6 @@
   background-color: rgba(240, 237, 240, 1);
 }
 
-.Productlist li:hover {
+.Productlist p:hover {
   background-color: rgb(212, 209, 212);
 }

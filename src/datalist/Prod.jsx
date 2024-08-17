@@ -1,0 +1,100 @@
+import React from 'react'
+import Pra from '../Pra';
+
+const Prod = () => {
+    const Productlist = [
+        {
+            id: 1,
+            img1: "/image/PowerX19.0_HDLEDMONITOR_1.avif",
+            img2: "/image/PowerX19.0_HDLEDMONITOR_3.avif",
+            title: "19.0” HD LED MONITOR",
+            rupess: "Rs. 7,499.00",
+            deleterupees: "Rs. 8,499.00",
+            save: "save 12%",
+            name: "Monitor",
+        },
+        {
+            id: 2,
+            img1: "/image/PowerX23.8_FHDFRAMELESSLEDMONITOR_3_347035bc-cecc-4be2-b46f-93c712527a11.avif",
+            img2: "/image/PowerX23.8_FHDFRAMELESSLEDMONITOR_1_42998cfc-2ea5-4be6-9a1c-b4a1264881b3.avif",
+            title: "23.8” FHD FRAMELESS LED MONITOR",
+            rupess: "Rs. 25,999.00",
+            deleterupees: "Rs. 27,999.00",
+            save: "save 7%",
+            name: "Monitor",
+        },
+        {
+            id: 3,
+            img1: "/image/PowerXSMDSMPS650_1.avif",
+            img2: "/image/PowerXSMDSMPS650.avif",
+            title: "PWX-650 SMD SMPS",
+            rupess: "Rs. 8,999.00",
+            deleterupees: "Rs. 9,999.00",
+            save: "save 10%",
+            name: "SMPS",
+        },
+        {
+            id: 4,
+            img1: "/image/PWX-RETROLINK-7000.avif",
+            img2: "/image/Left_b59294bc-ecc2-42f7-ab92-7066892c14f9.avif",
+            title: "USB WIRED KEYBOARD & MOUSE COMBO PWX-RETROLINK-7000",
+            rupess: "Rs. 2,499.00",
+            deleterupees: "Rs. 3,499.00",
+            save: "save 29%",
+            name: "KeyBoard",
+        },
+        {
+            id: 5,
+            img1: "https://www.power-x.in/cdn/shop/files/IMAGEMouseRapidwave.png?v=1704182173&width=300",
+            img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
+            title: "USB WIRED GAMING MOUSE PWX-RAPIDWAVE-U30",
+            rupess: "Rs. 1,999.00",
+            deleterupees: "Rs. 2,999.00",
+            save: "save 33%",
+            name: "mouse",
+        },
+        {
+            id: 6,
+            img1: "https://www.power-x.in/cdn/shop/files/111.jpg?v=1689769036&width=6000",
+            img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
+            title: "V100 Basic",
+            rupess: "Rs. 2,999.00",
+            deleterupees: "Rs. 3,999.00",
+            save: "save 25%",
+            name: "Basic",
+        },
+        {
+            id: 7,
+            img1: "https://www.power-x.in/cdn/shop/files/111.jpg?v=1689769036&width=6000",
+            img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
+            title: "U500 ULTRA WHITE/BLACK",
+            rupess: "Rs. 4,999.00",
+            deleterupees: "Rs. 5,999.00",
+            save: "save 17%",
+            name: "Ultra",
+        },
+        {
+            id: "8",
+            img1: "https://www.power-x.in/cdn/shop/files/111.jpg?v=1689769036&width=6000",
+            img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
+            title: "19.0” HD LED MONITOR",
+            rupess: "Rs. 7,499.00",
+            deleterupees: "Rs. 8,499.00",
+            save: "save 12%",
+            name: "Monitor",
+        },
+        {
+            id: "9",
+            img1: "https://www.power-x.in/cdn/shop/files/111.jpg?v=1689769036&width=6000",
+            img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
+            title: "19.0” HD LED MONITOR",
+            rupess: "Rs. 7,499.00",
+            deleterupees: "Rs. 8,499.00",
+            save: "save 12%",
+            name: "Monitor",
+        },
+    ];
+    return <Pra prod={Productlist} />
+}
+
+export default Prod;

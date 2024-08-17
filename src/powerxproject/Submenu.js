@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./Submenu.module.css";
 import { Link } from "react-router-dom";
 import Productlist from "../datalist/Productlist";
-function Submenu(props) {
+function Submenu() {
   const produtlist = [
     {
       id: 1,
