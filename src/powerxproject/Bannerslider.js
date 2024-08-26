@@ -10,7 +10,7 @@ import Example from "./Example";
 
 function Motherboard() {
   const motherboard = {
-    img: "https://www.power-x.in/cdn/shop/files/Garphic_Cards.png?v=1708512969&width=1400",
+    img: "/image/Garphic_Cards.webp",
     title: "Graphic Cards",
     para: "Unleash silent power with our NVIDIA GeForce GT 730.",
     btn1: "GT 610LP-2GB-DDR3",
@@ -94,57 +94,57 @@ function Bannerslider() {
     title2: "Trending Categories",
     CardImage: [
       {
-        img: "https://www.power-x.in/cdn/shop/files/PowerX_Monitor_8cf0b7eb-8a8e-4a4d-93e3-e79f0d5aea18.png?v=1708508177&width=300",
+        img: "/categories_product/Cat_PowerX_Monitor.webp",
         disc: "LED Monitors",
       },
 
       {
-        img: "https://www.power-x.in/cdn/shop/files/PowerX_Motherboards.png?v=1708508177&width=300",
+        img: "/categories_product/Cat_PowerX_Motherboards.webp",
         disc: "Motherboard",
       },
 
       {
-        img: "https://www.power-x.in/cdn/shop/files/PowerX_SSD_9eb256e5-e935-4611-9a47-be09990cf042.png?v=1708508178&width=300",
+        img: "/categories_product/Cat_PowerX_SSD.webp",
         disc: "SSD's",
       },
 
       {
-        img: "https://power-x.in/cdn/shop/files/PowerX_Keyboard_and_Mouse_e7f24201-c394-48a1-a05b-a7db59aae929.png?v=1708508177&width=300",
+        img: "/categories_product/Cat_PowerX_Keyboard_and_Mouse.webp",
         disc: "I/O Devices",
       },
 
       {
-        img: "https://www.power-x.in/cdn/shop/files/PowerX_Cabinets_63779ac8-8861-448b-8ce7-04a2066c7726.png?v=1708508177&width=300",
+        img: "/categories_product/Cat_PowerX_Cabinets.webp",
         disc: "Cabinets",
       },
 
       {
-        img: "https://www.power-x.in/cdn/shop/files/PowerX_Toners_8343dc8b-cdd3-4921-9d8d-ceee98566a94.png?v=1708508825&width=300",
+        img: "/image/Cat_PowerX_Toners_83.webp",
         disc: "Toner Catridges",
       },
 
       {
-        img: "https://power-x.in/cdn/shop/files/PowerX_Graphic_Cards.png?v=1708508177&width=300",
+        img: "/categories_product/Cat_PowerX_Graphic_Cards.webp",
         disc: "Graphic Card",
       },
 
       {
-        img: "https://www.power-x.in/cdn/shop/files/PowerX_SMD_Smps.png?v=1708508178&width=300",
+        img: "/categories_product/Cat_PowerX_SSD.webp",
         disc: "SMD SMPS",
       },
 
       {
-        img: "https://www.power-x.in/cdn/shop/files/PowerX_CPU_Cooler_Fans.png?v=1708508177&width=300",
+        img: "/categories_product/Cat_PowerX_CPU_Cooler_Fans.webp",
         disc: "Coolerfans",
       },
 
       {
-        img: "https://www.power-x.in/cdn/shop/files/PowerX_accessories.png?v=1708508177&width=300",
+        img: "/categories_product/Cat_PowerX_accessories.webp",
         disc: "Cable and Accessories",
       },
 
       {
-        img: "https://www.power-x.in/cdn/shop/files/PowerX_speakers.png?v=1708508177&width=300",
+        img: "/categories_product/Cat_PowerX_speakers.webp",
         disc: "Speaker",
       },
     ],
@@ -315,8 +315,7 @@ function LatestProduct() {
 
 function Printer() {
   const dataprinter = {
-    printering:
-      "https://www.power-x.in/cdn/shop/files/TonersPowerX.png?v=1708514680&width=1400",
+    printering: "/image/TonersPowerX.webp",
     parabold: "Streamlined Solutions",
     para: "for Toner Refills and Waste Management",
     heading: "Toner Cartridges",
@@ -327,7 +326,7 @@ function Printer() {
   };
   return (
     <div>
-      <div className="bg-[url('https://www.power-x.in/cdn/shop/files/TonersPowerX.png?v=1708514680&width=1400')] h-screen w-full bg-no-repeat bg-center bg-origin-content">
+      <div className="bg-[url('/image/TonersPowerX.webp')] h-screen w-full bg-no-repeat bg-center bg-origin-content">
         {/* <img src="" /> */}
         <div className=" flex items-end justify-center lg:pb-24 pb-14 h-full text-center">
           <div>
@@ -365,12 +364,9 @@ function Printer() {
 }
 
 const ProductShow = () => {
-  const [Image, setImage] = useState(
-    "https://www.power-x.in/cdn/shop/files/ScreenCleaningkit1.png?v=1708525058&width=600"
-  );
+  const [Image, setImage] = useState("/image/ScreenCleaningkit1.webp");
   const product = {
-    mein_image:
-      "https://www.power-x.in/cdn/shop/files/ScreenCleaningkit1.png?v=1708525058&width=600",
+    mein_image: "/image/ScreenCleaningkit1.webp",
     head: "Premium Screen Cleaning Kit",
     head1: "PX-S61",
     rupess: "Rs. 1,499.00",
@@ -382,19 +378,19 @@ const ProductShow = () => {
   const productlist = [
     {
       id: "1",
-      img: "https://www.power-x.in/cdn/shop/files/ScreenCleaningkit1.png?v=1708525058&width=600",
+      img: "/image/ScreenCleaningkit1.webp",
     },
     {
       id: "2",
-      img: "https://www.power-x.in/cdn/shop/files/ScreenCleaningkit2.png?v=1708525057&width=600",
+      img: "/image/ScreenCleaningkit2.webp",
     },
     {
       id: "3",
-      img: "https://www.power-x.in/cdn/shop/files/ScreenCleaningkit3.png?v=1708525057&width=700",
+      img: "/image/ScreenCleaningkit3.webp",
     },
     {
       id: "4",
-      img: "https://www.power-x.in/cdn/shop/files/ScreenCleaningkit4.png?v=1708525058&width=600",
+      img: "/image/ScreenCleaningkit4.webp",
     },
   ];
   const productClick = (item) => {
@@ -484,7 +480,7 @@ const CPUcooling = () => {
               <td className="">
                 <div className="grid place-items-start pl-3">
                   <img
-                    src="https://www.power-x.in/cdn/shop/files/Frame20Ultra.png?v=1708523278&width=150"
+                    src="/image/Inclined_b5a8b4e8-6812-496d-9e0d-1a83b4d1563c.avif"
                     alt="hello"
                   />
                 </div>
@@ -502,7 +498,7 @@ const CPUcooling = () => {
               <td className="">
                 <div className="grid place-items-start pl-3">
                   <img
-                    src="https://www.power-x.in/cdn/shop/files/Frame20Ultra.png?v=1708523278&width=150"
+                    src="/image/Inclined_b5a8b4e8-6812-496d-9e0d-1a83b4d1563c.avif"
                     alt="hello"
                   />
                 </div>
@@ -520,7 +516,7 @@ const CPUcooling = () => {
               <td className="">
                 <div className="grid place-items-start pl-3">
                   <img
-                    src="https://www.power-x.in/cdn/shop/files/Frame20Ultra.png?v=1708523278&width=150"
+                    src="/image/Inclined_b5a8b4e8-6812-496d-9e0d-1a83b4d1563c.avif"
                     alt="hello"
                   />
                 </div>
@@ -572,8 +568,7 @@ const CPUcooling = () => {
 };
 
 const CardRead = () => {
-  const Cradread =
-    "https://www.power-x.in/cdn/shop/files/Card_Desktop_final.png?v=1708521686&width=1400";
+  const Cradread = "/image/Card_Desktop_final.webp";
 
   const content1 = (
     <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
