@@ -12,7 +12,7 @@ const Productlist = [
   {
     id: 2,
     img1: "/product/PowerX23.8_FHDFRAMELESSLEDMONITOR_3_347035bc-cecc-4be2-b46f-93c712527a11.avif",
-    img2: "/product/PowerX23.8_FHDFRAMELESSLEDMONITOR_1_42998cfc-2ea5-4be6-9a1c-b4a1264881b3.avif",
+    img2: "/product/PowerX23.8_FHDFRAMELESSLEDMONITOR.avif",
     title: "23.8” FHD FRAMELESS LED MONITOR",
     rupess: "Rs. 25,999.00",
     deleterupees: "Rs. 27,999.00",
