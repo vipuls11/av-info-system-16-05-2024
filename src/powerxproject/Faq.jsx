@@ -14,7 +14,7 @@ const Faq = () => {
     const image2 = "https://www.power-x.in/cdn/shop/files/Laptop_Screen.png?v=1708521321&width=500";
     const image3 = "https://www.power-x.in/cdn/shop/files/Laptop_adapter.png?v=1708521321&width=500"
     return (<>
-        <div className="Effect_Card lg:flex align-middle items-center lg:gap-20">
+        <div className="Effect_Card lg:flex align-middle items-center lg:gap-20 overflow-hidden">
             <div className="lg:w-[40%] sm:grid sm:place-content-center">
                 <Swiper
                     effect={'cards'}

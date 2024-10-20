@@ -20,9 +20,9 @@ function Motherboard() {
   };
   return (
     <div>
-      <div className="relative">
+      <div className="lg:relative">
         <img src={motherboard.img} alt="" />
-        <div className="absolute bottom-0 right-0 my-5">
+        <div className="lg:absolute lg:bottom-0 lg:right-0 my-5">
           <h5 className="text-4xl font-semibold">{motherboard.title}</h5>
           <p className="text-lg font-semibold my-5">{motherboard.para}</p>
           <button
