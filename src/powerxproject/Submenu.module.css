@@ -1,22 +1,22 @@
 .Productlist {
   /* border: 1px solid black; */
-  padding: 10px;
+  padding: 10px 2px;
   line-height: 30px;
   background: linear-gradient(
     90deg,
     rgba(240, 237, 240, 1) 0%,
     rgba(0, 209, 255, 1) 100%
   );
-  width: 250px;
+  white-space: nowrap;
   height: 500px;
-  overflow: hidden;
+  overflow-y: hidden;
   overflow-y: scroll;
-  text-align: center;
+  border-radius: 16px;
 }
 
 .Productlist p {
-  border: 1px solid black;
-  margin: 5px;
+  margin: 5px 0px;
+  padding: 2px 5px;
   background-color: rgba(240, 237, 240, 1);
 }
 

@@ -9,7 +9,7 @@ const SSD = () => {
         return Productlist.filter(Product => Product.name === name);
     };
 
-    const filteredMonitors = filterProductsByName("Speakers");
+    const filteredMonitors = filterProductsByName("SSD");
 
     if (filteredMonitors.length === 0) {
         return <div className='w-full lg:h-[500px] flex items-center justify-center text-4xl font-semibold'><h2 className="">No Data Present</h2></div>

@@ -7,6 +7,8 @@ import { Button, Popover } from "flowbite-react";
 
 import "../index.css";
 import Example from "./Example";
+import Accordion from "../descriptionaccordion/Accordion";
+import Productlist from "../datalist/Productlist";
 
 function Motherboard() {
   const motherboard = {
@@ -201,88 +203,24 @@ function Bannerslider() {
 }
 
 function LatestProduct() {
+  // Function to shuffle the array
+  const getRandomProducts = (arr, count) => {
+    const result = new Set();
+    while (result.size < count) {
+      const randomIndex = Math.floor(Math.random() * arr.length);
+      result.add(arr[randomIndex]);
+    }
+    return Array.from(result);
+  };
   const product = {
     title: "Explore",
     title2: "Latest Products",
-    ProductImage: [
-      {
-        img1: "https://www.power-x.in/cdn/shop/files/111.jpg?v=1689769036&width=600",
-        img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
-        title: "19.0” HD LED MONITOR",
-        rupess: "Rs. 7,499.00",
-        deleterupees: "Rs. 8,499.00",
-        save: "save 12%",
-      },
-      {
-        img1: "https://www.power-x.in/cdn/shop/files/PowerX23.0.png?v=1707685899&width=300",
-        img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
-        title: "23.8” FHD FRAMELESS LED MONITOR",
-        rupess: "Rs. 25,999.00",
-        deleterupees: "Rs. 27,999.00",
-        save: "save 7%",
-      },
-      {
-        img1: "https://power-x.in/cdn/shop/files/PowerX650.png?v=1707687134&width=300",
-        img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
-        title: "PWX-650 SMD SMPS",
-        rupess: "Rs. 8,999.00",
-        deleterupees: "Rs. 9,999.00",
-        save: "save 10%",
-      },
-      {
-        img1: "https://www.power-x.in/cdn/shop/files/IMAGERETROLINK.png?v=1704181247&width=300",
-        img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
-        title: "USB WIRED KEYBOARD & MOUSE COMBO PWX-RETROLINK-7000",
-        rupess: "Rs. 2,499.00",
-        deleterupees: "Rs. 3,499.00",
-        save: "save 29%",
-      },
-      {
-        img1: "https://www.power-x.in/cdn/shop/files/IMAGEMouseRapidwave.png?v=1704182173&width=300",
-        img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
-        title: "USB WIRED GAMING MOUSE PWX-RAPIDWAVE-U30",
-        rupess: "Rs. 1,999.00",
-        deleterupees: "Rs. 2,999.00",
-        save: "save 33%",
-      },
-      {
-        img1: "https://www.power-x.in/cdn/shop/files/111.jpg?v=1689769036&width=6000",
-        img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
-        title: "V100 Basic",
-        rupess: "Rs. 2,999.00",
-        deleterupees: "Rs. 3,999.00",
-        save: "save 25%",
-      },
-      {
-        img1: "https://www.power-x.in/cdn/shop/files/111.jpg?v=1689769036&width=6000",
-        img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
-        title: "U500 ULTRA WHITE/BLACK",
-        rupess: "Rs. 4,999.00",
-        deleterupees: "Rs. 5,999.00",
-        save: "save 17%",
-      },
-      {
-        img1: "https://www.power-x.in/cdn/shop/files/111.jpg?v=1689769036&width=6000",
-        img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
-        title: "19.0” HD LED MONITOR",
-        rupess: "Rs. 7,499.00",
-        deleterupees: "Rs. 8,499.00",
-        save: "save 12%",
-      },
-      {
-        img1: "https://www.power-x.in/cdn/shop/files/111.jpg?v=1689769036&width=6000",
-        img2: "https://www.power-x.in/cdn/shop/files/KW9A5869-removebg-preview.png?v=1689769036&width=300",
-        title: "19.0” HD LED MONITOR",
-        rupess: "Rs. 7,499.00",
-        deleterupees: "Rs. 8,499.00",
-        save: "save 12%",
-      },
-    ],
+    ProductImage: getRandomProducts(Productlist, 10),
   };
   const LatestProductdetails = product.ProductImage.map((item, pos) => {
     console.log(item, "nkbfjbjhdf");
     return (
-      <div>
+      <div key={item.id}>
         <div className="relative mb-5">
           <img src={item.img1} className="w-full h-full" />
           <div className="absolute top-0 left-0 opacity-0 w-full h-full hover:opacity-100 hover:bg-white">
@@ -430,13 +368,7 @@ const ProductShow = () => {
               {product.span}
             </span>
           </p>
-
-          <div className="flex justify-between py-5 my-5 text-lg border-y border-y-white">
-            <h4>Description</h4>
-            <span>
-              <i class="fa-solid fa-arrow-down"></i>
-            </span>
-          </div>
+          <Accordion />
           <label htmlFor="" className="text-lg">
             Quantity :
           </label>
@@ -670,7 +602,7 @@ const CardRead = () => {
         </div>
         <img src={Cradread} />
 
-        <div className="absolute top-28 right-1/4">
+        <div className="absolute top-28 right-1/4 lg:block hidden">
           <Popover content={content1} placement="right">
             <Button className="rounded-full ">
               <span class="text-lg font-bold">
@@ -679,7 +611,7 @@ const CardRead = () => {
             </Button>
           </Popover>
         </div>
-        <div className="absolute top-2/3 left-1/4">
+        <div className="absolute top-2/3 left-1/4 lg:block hidden">
           <Popover content={content2} placement="right">
             <Button className="rounded-full ">
               <span class="text-lg font-bold">
@@ -688,7 +620,7 @@ const CardRead = () => {
             </Button>
           </Popover>
         </div>
-        <div className="absolute top-2/3 right-1/3">
+        <div className="absolute top-2/3 right-1/3 lg:block hidden">
           <Popover content={content3} placement="right">
             <Button className="rounded-full ">
               <span class="text-lg font-bold">
@@ -698,7 +630,7 @@ const CardRead = () => {
           </Popover>
         </div>
 
-        <div className="absolute top-96 right-24">
+        <div className="absolute top-96 right-24 lg:block hidden">
           <Popover content={content4} placement="right">
             <Button className="rounded-full ">
               <span class="text-lg font-bold">

@@ -2,9 +2,13 @@
   position: fixed;
   left: 0;
   top: 0;
-  width: 50%;
+  width: 30%;
   height: 100vh;
-  background-color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(240, 237, 240, 1) 0%,
+    rgba(0, 209, 255, 1) 100%
+  );
   color: black;
   z-index: 200;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);

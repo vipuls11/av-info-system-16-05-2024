@@ -1,23 +1,10 @@
-import React, { Children } from 'react'
+import React from 'react'
 
 const Pra = (props) => {
     console.log(props, 'hello')
     return (
-        <Pra1>
-            <p>hello vipul vishwakarma</p>
-        </Pra1>
-    )
-}
-
-const Pra1 = ({ children }) => {
-
-    return (
-        <>
-            <p>{children}</p>
-        </>
+        <div>Pra</div>
     )
 }
 
 export default Pra
-
-export { Pra1 }
