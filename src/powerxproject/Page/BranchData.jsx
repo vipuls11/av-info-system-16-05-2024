@@ -1,7 +1,6 @@
 import React from 'react'
 
 const BranchData = (props) => {
-    console.log(props, "datashow")
     return (
         <li className='' key={props.id} id={props.id}>
             <h3>{props.branchname}</h3>

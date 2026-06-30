@@ -40,18 +40,25 @@ const AboutUs = (props) => {
             <div className="bg-[#010B13] py-16 px-8 text-white rounded-xl w-[90%] m-auto">
                 <h2 className="lg:text-5xl md:text-5xl text-4xl  font-extrabold">Explore Our Range</h2>
             </div>
-            <div className="bg-[#DFFFFD] py-10  text-[#010B13] my-10 rounded-xl w-[90%] m-auto">
-                <marquee behavior="" direction="" className=''>
-                    <div className='flex '>
-                        {
-                            list.map(item => {
-                                return <div className='text-2xl font-medium mx-1'>
-                                    {item.listitem}
-                                </div>
-                            })
-                        }
+            <div className="bg-primary-50 py-10 text-primary-950 my-10 rounded-[2rem] w-[90%] m-auto overflow-hidden relative border border-primary-100 shadow-sm">
+                <div className="flex whitespace-nowrap animate-marquee w-max">
+                    {/* First instance of the list */}
+                    <div className="flex items-center gap-12 pr-12">
+                        {list.map((item, idx) => (
+                            <div key={`first-${idx}`} className='text-3xl font-bold opacity-80 hover:opacity-100 transition-opacity cursor-default'>
+                                {item.listitem}
+                            </div>
+                        ))}
                     </div>
-                </marquee>
+                    {/* Second instance for seamless looping */}
+                    <div className="flex items-center gap-12 pr-12">
+                        {list.map((item, idx) => (
+                            <div key={`second-${idx}`} className='text-3xl font-bold opacity-80 hover:opacity-100 transition-opacity cursor-default'>
+                                {item.listitem}
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
             <div className="">
                 {

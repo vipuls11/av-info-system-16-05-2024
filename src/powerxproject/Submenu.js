@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import classes from "./Submenu.module.css";
-import { Link } from "react-router-dom";
+
+import { NavLink } from "react-router-dom";
 import Productlist from "../datalist/Productlist";
-function Submenu() {
+function Submenu({ onClickItem }) {
   const produtlist = [
     {
       id: 1,
@@ -72,8 +72,8 @@ function Submenu() {
     },
   ];
 
+  // eslint-disable-next-line no-unused-vars
   const [items, setItems] = useState(Productlist);
-  console.log(items, "fhdjh");
   const filterItem = (cateItem) => {
     const updatedItems = Productlist.filter((curElem) => {
       return curElem.name === cateItem;
@@ -83,43 +83,45 @@ function Submenu() {
 
   return (
     <>
-      <div className={`${classes.Productlist} lg:md:block hidden`}>
-        {produtlist.map((item) => {
-          return (
-            <Link
-              onClick={() => {
-                filterItem(
-                  item.list
-                  // console.log(item.list, "iuiyhdfgydbnbnvfdjnjn")
-                );
-              }}
-              key={item.id}
-              to={item.links}
-            >
-              <p to={item.links}>{item.list}</p>
-            </Link>
-          );
-        })}
+      <div className="hidden lg:grid grid-cols-3 gap-3 p-6 bg-white/95 backdrop-blur-2xl shadow-2xl shadow-slate-300/50 rounded-2xl border border-slate-100 w-[800px] absolute left-1/2 -translate-x-1/2 z-[100]">
+        {produtlist.map((item) => (
+          <NavLink
+            to={item.links}
+            key={item.id}
+            onClick={() => filterItem(item.list)}
+            className={({ isActive }) => `group flex items-center px-4 py-3 rounded-xl transition-all duration-300 border hover:shadow-sm ${isActive ? 'bg-primary-50 border-primary-100' : 'border-transparent hover:bg-primary-50 hover:border-primary-100'}`}
+          >
+            {({ isActive }) => (
+              <>
+                <div className={`w-2 h-2 rounded-full bg-primary-500 mr-3 transition-all transform ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0'}`}></div>
+                <p className={`font-semibold transition-colors text-sm ${isActive ? 'text-primary-700' : 'text-slate-700 group-hover:text-primary-700'}`}>{item.list}</p>
+              </>
+            )}
+          </NavLink>
+        ))}
       </div>
 
       {/* .....Formobile... */}
-      <ul className={`lg:md:hidden block py-1`}>
-        {produtlist.map((item) => {
-          return (
-            <li
-              className="border-b bottom-1 border-black"
+      <ul className="lg:hidden flex flex-col px-6 py-4 bg-white/90 backdrop-blur-xl rounded-2xl mt-4 mx-4 shadow-xl shadow-slate-200/50 border border-white">
+        {produtlist.map((item) => (
+          <li key={item.id} className="border-b border-slate-100 last:border-0">
+            <NavLink
+              to={item.links}
               onClick={() => {
-                filterItem(
-                  item.list
-                  // console.log(item.list, "iuiyhdfgydbnbnvfdjnjn")
-                );
+                filterItem(item.list);
+                if (onClickItem) onClickItem();
               }}
-              key={item.id}
+              className={({ isActive }) => `flex items-center py-4 font-semibold transition-colors ${isActive ? 'text-primary-600' : 'text-slate-700 hover:text-primary-600'}`}
             >
-              <Link to={item.links}>{item.list}</Link>
-            </li>
-          );
-        })}
+              {({ isActive }) => (
+                <>
+                  <i className={`fa-solid fa-chevron-right text-xs mr-3 ${isActive ? 'text-primary-500' : 'text-primary-300'}`}></i>
+                  {item.list}
+                </>
+              )}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </>
   );

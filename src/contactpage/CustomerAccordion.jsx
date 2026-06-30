@@ -28,12 +28,11 @@ export const CustomerAccordion = () => {
     const [selected, setSelected] = useState(null);
 
     const toggle = (i) => {
-        if (selected == i) {
+        if (selected === i) {
             return setSelected(null)
         }
 
         setSelected(i)
-        console.log("Hello")
     }
     return (
         <div className="grid grid-cols-2 py-14">
@@ -56,9 +55,9 @@ export const CustomerAccordion = () => {
                                 <div key={i} className='item  '>
                                     <div className="title" onClick={() => toggle(i)}>
                                         <h2 className="" >{item.Question} </h2>
-                                        <span>{selected == i ? <IoIosArrowDropupCircle /> : <IoIosArrowDropdownCircle />}</span>
+                                        <span>{selected === i ? <IoIosArrowDropupCircle /> : <IoIosArrowDropdownCircle />}</span>
                                     </div>
-                                    <p className={selected == i ? 'content show' : 'content'}>{item.Answer}</p>
+                                    <p className={selected === i ? 'content show' : 'content'}>{item.Answer}</p>
                                 </div>
                             )
                         }

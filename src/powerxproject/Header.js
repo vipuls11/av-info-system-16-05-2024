@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import classes from "./Header.module.css";
 import Submenu from "./Submenu";
 import SideDrawer from "../SideDrawer/SideDrawer";
 import BackDrop from "../SideDrawer/BackDrop";
-import Productlist from "../datalist/Productlist";
 import Userlogin from "./Userlogin";
+import Productlist from "../datalist/Productlist";
+import SearchProduct from "../components/SearchProduct";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-
 function Header(props) {
   const [open, setOpen] = useState(false);
-  //  const myRef = useRef(null);
-
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMobileSubmenuOpen, setIsMobileSubmenuOpen] = useState(false);
   const OpenDrawerHandler = () => {
     setOpen(true);
   };
@@ -20,14 +20,13 @@ function Header(props) {
     setOpen(false);
   };
   const header = {
-    img_log: "./image/logoavs.png",
+    img_log: "image/logoavs.png",
     about: "About",
     branches: "Branches",
     products: "Products",
     rma_poloicy: "RMA Policy",
     contact_us: "Contact Us",
   };
-  console.log(open, "open");
   // const compo = (
   //   <div className="lg:md:hidden block text-black">
   //     <ul className="text-left p-5">
@@ -57,32 +56,66 @@ function Header(props) {
     <>
       {open && <BackDrop onClick={closeDrawerHandler} />}
 
-      <SideDrawer show={open} onClick={closeDrawerHandler}>
-        <div className="lg:md:hidden block text-black">
-          <ul className="text-left p-5">
-            <li className={classes.Menu_mobile}>
-              <Link to="/about-us">{header.about}</Link>
+      <SideDrawer show={open}
+      //onClick={closeDrawerHandler}
+      >
+        <div className="md:hidden block text-slate-800 w-72 h-full bg-white shadow-2xl overflow-y-auto">
+          <div className="p-6 border-b border-slate-100 flex justify-between items-center">
+            <img src={header.img_log} alt="Logo" className="w-32 object-contain" />
+            <button onClick={closeDrawerHandler} className="text-slate-400 hover:text-slate-700 text-xl p-2 bg-slate-50 rounded-full">
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <ul className="text-left p-4 flex flex-col gap-2">
+            <li>
+              <NavLink
+                to="/about-us"
+                onClick={closeDrawerHandler}
+                className={({ isActive }) => `block py-3.5 px-4 rounded-xl transition-all font-medium ${isActive ? 'bg-primary-50 text-primary-600 font-bold' : 'text-slate-700 hover:bg-slate-50'}`}
+              >{header.about}</NavLink>
             </li>
-            <li className={classes.Menu_mobile}>
-              <Link to="/branch">{header.branches}</Link>
+            <li>
+              <NavLink
+                to="/branch"
+                onClick={closeDrawerHandler}
+                className={({ isActive }) => `block py-3.5 px-4 rounded-xl transition-all font-medium ${isActive ? 'bg-primary-50 text-primary-600 font-bold' : 'text-slate-700 hover:bg-slate-50'}`}
+              >{header.branches}</NavLink>
             </li>
-            <li className={`${classes.Menu_mobile} `}>
-              <Link to="/product" className="flex justify-between">
-                {header.products}
-                <span className="">
-                  <ArrowDropDownIcon />
-                </span>
-              </Link>
-              <div className="">
-                <Submenu />
+            <li className="flex flex-col">
+              <div className="flex items-center justify-between py-1 px-2 rounded-xl hover:bg-slate-50 transition-colors">
+                <NavLink
+                  to="/product"
+                  onClick={() => setIsMobileSubmenuOpen(!isMobileSubmenuOpen)}
+                  className={({ isActive }) => `flex-1 py-2.5 px-2 font-medium transition-colors ${isActive ? 'text-primary-600 font-bold' : 'text-slate-700'}`}
+                >
+                  {header.products}
+                </NavLink>
+                <button
+                  className="p-2 text-slate-500 hover:bg-slate-100 rounded-lg transition-colors flex items-center justify-center w-10 h-10"
+                >
+                  <ArrowDropDownIcon className={`transition-transform duration-300 ${isMobileSubmenuOpen ? 'rotate-180' : ''}`} />
+                </button>
+              </div>
+              <div className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isMobileSubmenuOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                <div className="overflow-hidden">
+                  <Submenu prodList={Productlist} onClickItem={closeDrawerHandler} />
+                </div>
               </div>
             </li>
 
-            <li className={classes.Menu_mobile}>
-              <Link to="/rma-policy">{header.rma_poloicy}</Link>
+            <li>
+              <NavLink
+                to="/rma-policy"
+                onClick={closeDrawerHandler}
+                className={({ isActive }) => `block py-3.5 px-4 rounded-xl transition-all font-medium ${isActive ? 'bg-primary-50 text-primary-600 font-bold' : 'text-slate-700 hover:bg-slate-50'}`}
+              >{header.rma_poloicy}</NavLink>
             </li>
-            <li className={classes.Menu_mobile}>
-              <Link to="/contact-us">{header.contact_us}</Link>
+            <li>
+              <NavLink
+                to="/contact-us"
+                onClick={closeDrawerHandler}
+                className={({ isActive }) => `block py-3.5 px-4 rounded-xl transition-all font-medium ${isActive ? 'bg-primary-50 text-primary-600 font-bold' : 'text-slate-700 hover:bg-slate-50'}`}
+              >{header.contact_us}</NavLink>
             </li>
           </ul>
         </div>
@@ -95,15 +128,15 @@ function Header(props) {
             <Link to="/">
               <img
                 src={header.img_log}
-                alt="log-Image"
-                className="lg:w-82 md:w-72 w-52"
+                alt="Logo"
+                className="w-32 sm:w-48 lg:w-64 object-contain"
               />
             </Link>
           </div>
-          <div className="lg:md:block hidden">
+          <div className="hidden lg:block">
             <ul className={classes.Header_Subcat}>
-              <li className="Menu">
-                <Link
+              <li className={classes.Menu}>
+                <NavLink
                   to="/about-us"
                   className={({ isActive }) =>
                     isActive
@@ -112,10 +145,10 @@ function Header(props) {
                   }
                 >
                   {header.about}
-                </Link>
+                </NavLink>
               </li>
-              <li className="Menu">
-                <Link
+              <li className={classes.Menu}>
+                <NavLink
                   to="/branch"
                   className={({ isActive }) =>
                     isActive
@@ -124,43 +157,73 @@ function Header(props) {
                   }
                 >
                   {header.branches}
-                </Link>
+                </NavLink>
               </li>
-              <li className={classes.Menu}>
-                <Link to="/product">{header.products}</Link>
-                <div className={classes.Submenu}>
+              {/* Product Mega Menu - We don't use classes.Menu here to avoid 'relative' positioning constraint */}
+              <li className="relative hover:text-primary-600 transition-colors duration-300 py-2 px-1 rounded-md group">
+                <NavLink
+                  to="/product"
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${classes.headerItem} ${classes.active}`
+                      : `${classes.headerItem}`
+                  }
+                >{header.products}</NavLink>
+                <div className="absolute top-full left-0 w-full hidden group-hover:block z-[100]">
                   <Submenu prodList={Productlist} />
                 </div>
               </li>
-              <li className="Menu">
-                <Link to="/rma-policy">{header.rma_poloicy}</Link>
+              <li className={classes.Menu}>
+                <NavLink
+                  to="/rma-policy"
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${classes.headerItem} ${classes.active}`
+                      : `${classes.headerItem}`
+                  }
+                >{header.rma_poloicy}</NavLink>
               </li>
-              <li className="Menu">
-                <Link to="/contact-us">{header.contact_us}</Link>
+              <li className={classes.Menu}>
+                <NavLink
+                  to="/contact-us"
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${classes.headerItem} ${classes.active}`
+                      : `${classes.headerItem}`
+                  }
+                >{header.contact_us}</NavLink>
               </li>
             </ul>
           </div>
           <div className={classes.User_Header}>
-            <button type="" className="">
-              {/* {header.search} */}
-              <i class="fa-solid fa-magnifying-glass"></i>
+            <button
+              type="button"
+              className="text-slate-700 hover:text-primary-600 transition-colors text-xl p-2 rounded-full hover:bg-slate-100"
+              onClick={() => { setIsSearchOpen(true); }}
+            >
+              <i className="fa-solid fa-magnifying-glass"></i>
             </button>
-            {/* <button type="" className=""> */}
-            {/* {header.user} */}
-            {/* <i class="fa-solid fa-user"></i>
-          </button> */}
             <Userlogin />
-            <button type="" className="">
-              {/* {header.cart} */}
+            {/* <button type="" className="">
               <i class="fa-solid fa-cart-shopping"></i>
-            </button>
+            </button> */}
 
-            <button className="block lg:md:hidden" onClick={OpenDrawerHandler}>
-              <i class="fa-solid fa-bars"></i>
+            <button className="block lg:hidden ml-4 text-2xl text-slate-800 p-2" onClick={OpenDrawerHandler}>
+              <i className="fa-solid fa-bars"></i>
             </button>
           </div>
         </nav>
       </div>
+
+      {/* Global Search Overlay */}
+      {isSearchOpen && (
+        <SearchProduct
+          setIsSearchOpen={setIsSearchOpen}
+          closeDrawerHandler={closeDrawerHandler}
+          OpenDrawerHandler={OpenDrawerHandler}
+          Productlist={Productlist}
+        />
+      )}
     </>
   );
 }

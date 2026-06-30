@@ -1,7 +1,6 @@
 import React from 'react';
 
 const AboutList=(props)=>{
-        console.log(props, "vipul")
     return(
         <>
         {/* <div>

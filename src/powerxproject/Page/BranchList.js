@@ -1,6 +1,5 @@
 import React from "react";
-import "./BranchList.css";
-// import BranchDataList from "./BranchDataList";
+// Removed import "./BranchList.css" because we are using Tailwind
 
 const BranchList = () => {
   const BranchListitem = [
@@ -17,7 +16,6 @@ const BranchList = () => {
     {
       id: "02",
       branch_name: "Maharashtra: Pune",
-      //   head: "",
       company_name: "Prime Assetsource Pvt Ltd,",
       address:
         "Survey No.1547/A., G-7, Sadashiv Pet, Ramasharm Housing Society, Tilak Road, Pune - 411030",
@@ -27,7 +25,6 @@ const BranchList = () => {
     {
       id: "03",
       branch_name: "Telangana: Hyderabad",
-      //   head: "",
       company_name: "Prime Assetsource Pvt Ltd,",
       address:
         "Shop No 455 C Block 4th Floor, CTC Park Lane, S D Road, Secunderabad/Hyderabad - 500003",
@@ -37,7 +34,6 @@ const BranchList = () => {
     {
       id: "04",
       branch_name: "Maharashtra: Mumbai",
-      //   head: "",
       company_name: "Prime Assetsource Pvt Ltd,",
       address:
         "No.21, 3rd Floor, Shanti Niketan Building, Near Vijay Chambers, Padamji Road, Mumbai - 400004",
@@ -47,7 +43,6 @@ const BranchList = () => {
     {
       id: "05",
       branch_name: "Maharashtra: New Mumbai",
-      //   head: "",
       company_name: "Prime Assetsource Pvt Ltd,",
       address:
         "Vashi Plaza, Sector 17 Office No-510 'D' Wing 3rd Floor, Plot No. 80 & 81, Mumbai - 400703",
@@ -59,22 +54,33 @@ const BranchList = () => {
   const items = BranchListitem.map((list, index) => {
     const isFirst = index === 0;
     return (
-      <li className="branchlist" key={list.id} id={list.id}>
-        <h3 className="branchlist_name">{list.branch_name}</h3>
-        <p className="branchlist_head">{list.head}</p>
-        <p className="branchlist_company">{list.company_name}</p>
-        <address
-          className={`branchlist_address ${isFirst ? "first-address" : ""}`}
-        >
+      <li 
+        key={list.id} 
+        id={list.id} 
+        className={`bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow ${isFirst ? "md:col-span-2 bg-slate-50 border-primary-100" : ""}`}
+      >
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">{list.branch_name}</h3>
+        {list.head && <p className="text-primary-600 font-semibold mb-2">{list.head}</p>}
+        <p className="font-semibold text-slate-700">{list.company_name}</p>
+        <address className={`text-slate-500 not-italic my-4 leading-relaxed ${isFirst ? "md:w-3/5" : ""}`}>
           {list.address}
         </address>
-        <p className="branchlist_phone_no">{list.phone_no}</p>
-        <button className="branchlist_button">{list.button_person_name}</button>
+        <p className="font-medium text-slate-800 mb-6 flex items-center">
+          <i className="fa-solid fa-phone text-primary-500 mr-3"></i>
+          {list.phone_no}
+        </p>
+        <button className="w-full sm:w-auto px-6 py-3 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition-colors shadow-md">
+          {list.button_person_name}
+        </button>
       </li>
     );
   });
 
-  return <ul className="branchs">{items}</ul>;
+  return (
+    <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 font-medium">
+      {items}
+    </ul>
+  );
 };
 
 export default BranchList;

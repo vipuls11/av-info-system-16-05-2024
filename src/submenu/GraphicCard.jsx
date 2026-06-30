@@ -3,8 +3,6 @@ import Productlist from '../datalist/Productlist';
 
 
 const GraphicCard = () => {
-    console.log(Productlist, "RMAPOLICY")
-    // console.log(props.monitor, "MONITOR PROP")
 
     const filterProductsByName = (name) => {
         return Productlist.filter(Product => Product.name === name);
@@ -24,9 +22,9 @@ const GraphicCard = () => {
                         {filteredMonitors.map(product => (
                             <div>
                                 <div className="relative mb-5">
-                                    <img src={product.img1} className="w-full h-full" />
+                                    <img src={product.img1} className="w-full h-full" alt="Product Front" />
                                     <div className="absolute top-0 left-0 opacity-0 w-full h-full hover:opacity-100 hover:bg-white">
-                                        <img src={product.img2} />
+                                        <img src={product.img2} alt="Product Back" />
                                     </div>
                                     <span className="absolute top-2 left-2 text-white rounded-xl text-xs bg-red-600 px-2 py-0.5">
                                         {product.save}
