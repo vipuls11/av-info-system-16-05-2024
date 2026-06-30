@@ -10,12 +10,12 @@
     {
       "src": "image/logoavsfav.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "any"
     },
     {
       "src": "image/logoavsfav.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "any"
     }
   ],
   "start_url": ".",
