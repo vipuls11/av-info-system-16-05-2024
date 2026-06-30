@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Header from "./powerxproject/Header";
+// import Header from "./powerxproject/Header";
 import Bannerslider, {
   Motherboard,
   LatestProduct,
@@ -11,7 +11,7 @@ import Bannerslider, {
   Ram,
 } from "./powerxproject/Bannerslider";
 import "./App.css";
-import Footer from "./powerxproject/Footer";
+// import Footer from "./powerxproject/Footer";
 import ImageSlider from "./powerxproject/ImageSlider";
 import Faq from "./powerxproject/Faq";
 import GroupBussiness from "./powerxproject/GroupBussiness";
