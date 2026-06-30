@@ -41,133 +41,125 @@ const Userlogin = () => {
 
     return (
         <>
-            <button className={styles.loginButton} onClick={handleClickOpen}>
-                <i class="fa-solid fa-user"></i>
+            <button className="text-slate-700 hover:text-primary-600 transition-colors text-xl p-2 rounded-full hover:bg-slate-100" onClick={handleClickOpen}>
+                <i className="fa-solid fa-user"></i>
             </button>
             <Dialog
-                fullScreen
                 open={open}
                 onClose={handleClose}
                 TransitionComponent={Transition}
+                PaperProps={{
+                    style: {
+                        borderRadius: '1.5rem',
+                        padding: '2rem',
+                        maxWidth: '450px',
+                        width: '100%',
+                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+                    }
+                }}
             >
-                <List>
-                    <AppBar sx={{ position: 'relative' }}>
-                        <Toolbar>
-                            <IconButton
-                                edge="start"
-                                color="inherit"
-                                onClick={handleClose}
-                                aria-label="close"
-                            >
-                                <CloseIcon />
-                            </IconButton>
-                            <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                                Sound
-                            </Typography>
-                            <Button autoFocus color="inherit" onClick={handleClose}>
-                                save
-                            </Button>
-                        </Toolbar>
-                    </AppBar>
-                    {/* <ListItemButton>
-                        <ListItemText primary="Phone ringtone" secondary="Titania" />
-                    </ListItemButton> */}
-                    {/* <Divider /> */}
-                    {/* <ListItemButton>
-                        <ListItemText
-                            primary="Default notification ringtone"
-                            secondary="Tethys"
-                        />
+                <div className="relative">
+                    <button 
+                        onClick={handleClose} 
+                        className="absolute -top-2 -right-2 text-slate-400 hover:text-slate-900 transition-colors p-2 rounded-full hover:bg-slate-100"
+                    >
+                        <CloseIcon />
+                    </button>
+                    
+                    <div className="text-center flex flex-col mt-4">
+                        <h2 className="text-3xl font-extrabold text-slate-900 mb-2">
+                            {action === "login" ? "Welcome Back" : "Create Account"}
+                        </h2>
+                        <p className="text-slate-500 mb-8">
+                            {action === "login" 
+                                ? "Enter your details to access your account." 
+                                : "Sign up to start shopping premium gear."}
+                        </p>
                         
-                    </ListItemButton> */}
-                    <div >
-                        <div >
-                            {/* <div className={styles.modalHeader}>
-                                    <button className={styles.closeButton} onClick={onCloseModal}>
-                                        &times;
-                                    </button>
-                                </div> */}
-                            <div className={styles.modalBody}>
-                                <div className={`LoginSignupCss text-center flex flex-col gap-5`}>
-                                    <h2 className="LoginSignupCss2">{action}</h2>
-                                    <div ClassName="my-5">
-                                        {action === "login" ? (
-                                            <div></div>
-                                        ) : (
-                                            <div className=" flex flex-col gap-5">
-                                                <div className="User flex border border-black text-left px-3">
-                                                    <span className=" ">
-                                                        <i class="fa-solid fa-user"></i>
-                                                    </span>
-                                                    <input
-                                                        type=""
-                                                        name=""
-                                                        value=""
-                                                        className=" px-2 w-full outline-none ring:outline-none focus:outline-none"
-                                                        placeholder="Name"
-                                                    />
-                                                </div>
-                                                <div className="User flex border border-black text-left px-3">
-                                                    <span className=" ">
-                                                        <i class="fa-solid fa-user"></i>
-                                                    </span>
-                                                    <input
-                                                        type=""
-                                                        name=""
-                                                        value=""
-                                                        className=" px-2 w-full outline-none ring:outline-none focus:outline-none"
-                                                        placeholder="Phone Number"
-                                                    />
-                                                </div>
-                                            </div>
-
-
-                                        )}
-                                    </div>
-                                    <div className="Email flex border border-black text-left px-3">
-                                        <span>
-                                            <i class="fa-solid fa-envelope"></i>
-                                        </span>
-                                        <input type="" name="" value="" className="px-2 w-full outline-none ring:outline-none focus:outline-none" placeholder="Email Id" />
-                                    </div>
-                                    <div className="Password flex border border-black text-left px-3">
-                                        <span>
-                                            <i class="fa-solid fa-lock"></i>
-                                        </span>
-                                        <input type="" name="" value="" className="px-2 w-full outline-none ring:outline-none focus:outline-none" placeholder="Password" />
-                                    </div>
-                                    {action === "Sign Up" ? (
-                                        <div></div>
-                                    ) : (
-                                        <div>
-                                            <p>Lost Password? Click here?</p>
-                                            <button
-                                                className={styles.gray}
-                                                onClick={() => SetAction("login")}
-                                            >
-                                                {loginsign.login}
-                                            </button>
-                                            <p>For new Resigration <span onClick={() => SetAction("Sign Up")}>{loginsign.btn_signup}</span></p>
+                        <div className="flex flex-col gap-4">
+                            {action === "Sign Up" && (
+                                <>
+                                    <div className="relative">
+                                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                                            <i className="fa-solid fa-user"></i>
                                         </div>
-                                    )}
-                                    {action === "login" ? (
-                                        <div></div>
-                                    ) : (
-                                        <div>
-                                            <p>Already a Member? <span
-                                                className=''
-                                                onClick={() => SetAction("login")}
-                                            >login</span></p>
-                                            <button className={`${styles.gray} px-8 py-1`} onClick={() => SetAction("Sign Up")}>{loginsign.btn_signup}</button>
+                                        <input 
+                                            type="text" 
+                                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-50 transition-all outline-none bg-slate-50 hover:bg-white text-slate-900" 
+                                            placeholder="Full Name" 
+                                        />
+                                    </div>
+                                    <div className="relative">
+                                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                                            <i className="fa-solid fa-phone"></i>
                                         </div>
-                                    )}
-
+                                        <input 
+                                            type="tel" 
+                                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-50 transition-all outline-none bg-slate-50 hover:bg-white text-slate-900" 
+                                            placeholder="Phone Number" 
+                                        />
+                                    </div>
+                                </>
+                            )}
+                            
+                            <div className="relative">
+                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                                    <i className="fa-solid fa-envelope"></i>
                                 </div>
-
+                                <input 
+                                    type="email" 
+                                    className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-50 transition-all outline-none bg-slate-50 hover:bg-white text-slate-900" 
+                                    placeholder="Email Address" 
+                                />
                             </div>
+                            
+                            <div className="relative">
+                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                                    <i className="fa-solid fa-lock"></i>
+                                </div>
+                                <input 
+                                    type="password" 
+                                    className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-50 transition-all outline-none bg-slate-50 hover:bg-white text-slate-900" 
+                                    placeholder="Password" 
+                                />
+                            </div>
+                            
+                            {action === "login" && (
+                                <div className="text-right mt-1">
+                                    <button className="text-primary-600 font-medium text-sm hover:text-primary-700 transition-colors">Forgot Password?</button>
+                                </div>
+                            )}
+
+                            <button className="w-full bg-slate-900 text-white font-bold py-4 rounded-xl mt-4 shadow-lg shadow-slate-900/20 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+                                {action === "login" ? "Login" : "Sign Up"}
+                            </button>
+                        </div>
+                        
+                        <div className="mt-8 pt-6 border-t border-slate-100">
+                            {action === "login" ? (
+                                <p className="text-slate-500 font-medium">
+                                    Don't have an account? 
+                                    <button 
+                                        className="text-primary-600 font-bold hover:text-primary-700 transition-colors ml-1.5" 
+                                        onClick={() => SetAction("Sign Up")}
+                                    >
+                                        Sign Up
+                                    </button>
+                                </p>
+                            ) : (
+                                <p className="text-slate-500 font-medium">
+                                    Already have an account? 
+                                    <button 
+                                        className="text-primary-600 font-bold hover:text-primary-700 transition-colors ml-1.5" 
+                                        onClick={() => SetAction("login")}
+                                    >
+                                        Login
+                                    </button>
+                                </p>
+                            )}
                         </div>
                     </div>
-                </List>
+                </div>
             </Dialog>
         </>
     );

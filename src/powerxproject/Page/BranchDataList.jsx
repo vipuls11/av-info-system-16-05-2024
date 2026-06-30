@@ -2,7 +2,6 @@ import React from 'react'
 import BranchData from './BranchData'
 
 const BranchDataList = (props) => {
-    console.log(props, "cnxjvfdvudnj")
     return (
         <div>
 

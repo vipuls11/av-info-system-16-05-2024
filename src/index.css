@@ -1,6 +1,16 @@
-body {
-  background-color: rgb(255, 246, 246);
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased selection:bg-primary-500 selection:text-white;
+    font-family: 'Outfit', sans-serif;
+  }
 }
+
 * {
   margin: 0;
   padding: 0;
